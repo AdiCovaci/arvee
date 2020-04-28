@@ -19,7 +19,7 @@ class LogNormal(RandomVariable):
         self.sigma = np.sqrt(self.sigma2)
     
     def generate(self, size: int = 1):
-        X = Normal(self.mu, self.sigma2)
+        X = Normal(self.mu, self.sigma)
         return np.exp(X.generate(size))
     
     def __call__(self, size: int = 1):
